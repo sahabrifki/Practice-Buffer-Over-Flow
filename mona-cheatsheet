@@ -1,0 +1,24 @@
+# its all mona helpfull cheatsheet
+
+- set mona working folder
+!mona config -set workingfolder C:\logs\%p
+
+- pattern create (membuat jumlah pattern)
+!mona pc jumlah_pattern
+
+- deteksi offset
+!mona findmsp valueOffset (yang di EIP eg: 0x181818181818)
+!mona pattern_offset valueOffset (eg: 0x181818181818)
+
+- cek seluruh modules (vulnerable modules)
+!mona modules
+
+- finding jmp esp modules
+!mona find -s "\xff\xe4" -m namamodules
+
+- generate badchars
+!mona bytearray
+
+- compare badchars
+!mona compare -f C:\path-to-working-direktori\bytearray.bin -a badchars-program
+
